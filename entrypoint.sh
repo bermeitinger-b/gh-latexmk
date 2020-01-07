@@ -13,6 +13,7 @@ cd /github/workspace
 
 docker run \
 	--rm \
+	--volumes-from / \
     -v "/github/workspace:/data" \
     bermeitingerb/texlive:$TEXLIVE \
-    latexmk
+    latexmk -r latexmkrc
