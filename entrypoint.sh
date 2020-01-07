@@ -10,5 +10,6 @@ docker run \
     	 rm -rf /out/artifact && \\
     	 latexmk -outdir=/out/artifact && \\
     	 cp /out/artifact/*.bbl . && \\
-    	 zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' main.zip ."
+         cp /out/artifact/*.pdf /out
+    	 zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' /out/main.zip ."
 
