@@ -5,4 +5,4 @@ docker run \
 	-w "/data" \
     -v "/github/workspace:/data" \
     bermeitingerb/texlive:$TEXLIVE \
-    latexmk
+    ls -al
