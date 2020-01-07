@@ -9,6 +9,6 @@ docker run \
     	 rm -rf /out && \\
     	 latexmk -outdir=/out && \\
     	 cp /out/*.bbl . && \\
-    	 zip -r --exclude='*.git*' --exclude='*.circleci*' --exclude='latexmkrc' --exclude='README.md' main.zip . && \\
+    	 zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' main.zip . && \\
     	 cp /out/*.pdf .
     "
