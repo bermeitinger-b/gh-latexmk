@@ -5,4 +5,4 @@ docker run \
 	-w "/data" \
     -v "/github/workspace:/data" \
     bermeitingerb/texlive:$TEXLIVE \
-    bash -c "cd /data && latexmk"
+    bash -c "cd /data && latexmk -r latexmkrc"
