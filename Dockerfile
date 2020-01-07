@@ -7,4 +7,3 @@ COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/docker
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
-
