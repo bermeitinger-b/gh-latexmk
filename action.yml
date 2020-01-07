@@ -1,11 +1,13 @@
 name: LaTeX compilation
 description: Compiles latex documents using latexmk and multiple TeXLive distributions
 author: Bernhard Bermeitinger
+
 inputs:
   texlive:
     description: TeXLive version (2016 or latest)
+
 runs:
   using: docker
-  image: docker://bermeitingerb/action-latex:v1.0.0
+  image: Dockerfile
   env:
     TEXLIVE: ${{ inputs.texlive }}
