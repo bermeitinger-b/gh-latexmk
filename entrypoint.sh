@@ -6,6 +6,7 @@ docker run \
 	bermeitingerb/texlive:$TEXLIVE \
     bash -c \
     	"cd /github/workspace && \\
+    	 latexmk -outdir=/out -C && \\
     	 latexmk -outdir=/out && \\
     	 cp /out/*.bbl . && \\
     	 zip -r --exclude='*.git*' --exclude='*.circleci*' --exclude='latexmkrc' --exclude='README.md' main.zip . && \\
