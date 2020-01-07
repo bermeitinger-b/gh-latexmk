@@ -7,7 +7,7 @@ docker run \
     bash -c \
     	"cd /github/workspace && \\
     	 latexmk -outdir=/out && \\
-    	 cp /out/*.bbl . \\
+    	 cp /out/*.bbl . && \\
     	 zip -r \\
     	 	--exclude='*.git*' \\
     	 	--exclude='*.circleci*' \\
