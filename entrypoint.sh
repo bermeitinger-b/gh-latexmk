@@ -3,12 +3,12 @@
 docker run \
 	--rm \
 	--volumes-from $(basename $(cat /proc/1/cpuset)) \
+	-v "/out:/out" \
 	bermeitingerb/texlive:$TEXLIVE \
     bash -c \
     	"cd /github/workspace && \\
-    	 rm -rf /out && \\
-    	 latexmk -outdir=/out && \\
-    	 cp /out/*.bbl . && \\
+    	 rm -rf /out/artifact && \\
+    	 latexmk -outdir=/out/artifact && \\
+    	 cp /out/artifact/*.bbl . && \\
     	 zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' main.zip . && \\
-    	 cp /out/*.pdf .
     "
