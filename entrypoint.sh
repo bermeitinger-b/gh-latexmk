@@ -3,7 +3,6 @@
 docker run \
 	--rm \
 	--volumes-from $(basename $(cat /proc/1/cpuset)) \
-	-v ""
 	bermeitingerb/texlive:$TEXLIVE \
     bash -c \
     	"cd /github/workspace && \\
