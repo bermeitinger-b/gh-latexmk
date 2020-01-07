@@ -7,7 +7,7 @@ docker run \
     bash -c \
     	"cd /github/workspace && \\
     	 latexmk && \\
-    	 cp main.pdf /main-$TEXLIVE.pdf && \\
+    	 mv main.pdf main-$TEXLIVE.pdf && \\
     	 latexmk -C && \\
-    	 zip -r --exclude='*.git*' --exclude='*.circleci*' --exclude='latexmkrc' --exclude='README.md' /arxiv-$TEXLIVE.zip .
+    	 zip -r --exclude='*.git*' --exclude='*.circleci*' --exclude='latexmkrc' --exclude='README.md' main-$TEXLIVE.zip .
     "
