@@ -3,11 +3,17 @@
 docker run \
 	--rm \
 	--volumes-from $(basename $(cat /proc/1/cpuset)) \
+	-v ""
 	bermeitingerb/texlive:$TEXLIVE \
     bash -c \
     	"cd /github/workspace && \\
-    	 latexmk && \\
-    	 mv main.pdf main-$TEXLIVE.pdf && \\
-    	 latexmk -C && \\
-    	 zip -r --exclude='*.git*' --exclude='*.circleci*' --exclude='latexmkrc' --exclude='README.md' main-$TEXLIVE.zip .
+    	 latexmk -outdir=/out && \\
+    	 cp /out/*.bbl . \\
+    	 zip -r \\
+    	 	--exclude='*.git*' \\
+    	 	--exclude='*.circleci*' \\
+    	 	--exclude='latexmkrc' \\
+    	 	--exclude='README.md' \\
+    	 	main.zip && \\
+    	 cp /out/*.pdf .
     "
