@@ -6,6 +6,6 @@ inputs:
     description: TeXLive version (2016 or latest)
 runs:
   using: docker
-  image: docker://bermeitinger-b/action-latex:v1.0.0
+  image: docker://bermeitingerb/action-latex:v1.0.0
   env:
     TEXLIVE: ${{ inputs.texlive }}
