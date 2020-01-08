@@ -8,6 +8,7 @@ docker run \
     bash -c \
     	"cd /github/workspace && \\
     	 rm -rf /build && \\
+         latexmk -outdir=/build -C && \\
     	 latexmk -outdir=/build && \\
     	 cp /build/*.bbl . && \\
 	 cp /build/*.pdf /out/ && \\
