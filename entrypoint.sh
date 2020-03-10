@@ -7,9 +7,9 @@ docker run \
 	bermeitingerb/texlive:$TEXLIVE \
     bash -c "\
         cd /github/workspace && \\
-        latexmk -outdir=/build && \\
-        cp /build/*.pdf /out/ && \\
-        zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' /out/main.zip . && \\
-        zip /out/main.zip -j /build/*.bbl
+        latexmk && \\
+	cp main.pdf /out/main.pdf && \\
+        latexmk -C && \\
+        zip -r --exclude='*.git*' --exclude='latexmkrc' --exclude='README.md' /out/main.zip .
     "
 
